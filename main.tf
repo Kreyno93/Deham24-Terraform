@@ -19,3 +19,12 @@ provider "aws" {
 #     Environment = "Test"
 #   }
 # }
+
+resource "aws_instance" "wordpress-instance" {
+  ami           = "ami-04f9aa2b7c7091927"
+  instance_type = "t3.micro"
+
+  tags = {
+    Name = "Wordpress-Webserver"
+  }
+}
